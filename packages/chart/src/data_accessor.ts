@@ -24,8 +24,9 @@ export type ResultGroup<T = any> = {
 
 export type DataContext = { results: ResultGroup; triggerParams: TriggerParams }
 
-export const DataAccessorContext =
-  createContext < ReturnType < typeof useState < DataContext >>> (null as any)
+export const DataAccessorContext = createContext<
+  ReturnType<typeof useState<DataContext>>
+>(null as any)
 
 export const useDataAccessor = () => {
   return useContext(DataAccessorContext)
